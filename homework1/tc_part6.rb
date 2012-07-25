@@ -30,6 +30,12 @@ class TestRpsGame < Test::Unit::TestCase
                   [:c, 8], [:c, 9], [:c, 10], [:c, 11],  
                   [:d, 8], [:d, 9], [:d, 10], [:d, 11]], get_result_from_inputs([:a, :b, :c, :d], [8, 9, 10, 11])
   end
+
+  def test_2_by_4
+    assert_equal [[1, 'a'], [1, 'b'], [1, 'c'], [1, 'd'],
+                  [2, 'a'], [2, 'b'], [2, 'c'], [2, 'd']], get_result_from_inputs([1, 2], ['a', 'b', 'c', 'd'])
+  end
+
   
   def get_result_from_inputs(left, right)
     c= CartesianProduct.new(left, right)
